@@ -18,7 +18,8 @@ def get_all_answers():
 
 
 def input_number():
-    pass
+    while True:
+        nams = input('введите 4 непоследующих числа')
 
 
 answers = 0
