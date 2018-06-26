@@ -52,12 +52,19 @@ def del_bad_answers(ans, enemy_try, bull, cow):
     return ans
 
 
-
+print('!' * 15, 'начало игры', '!' * 15)
 answers = get_all_answers()
 player = input_number()
 enemy = get_one_answer(answers)
 
 print(enemy)
+
+while True:
+    print('-' * 15, 'ход игрока', '-' * 15)
+    print('Угадайте число компъютер')
+    number = input_number()
+    bulls, cows = check(number, enemy)
+    print('быки: ', bulls, 'коровы:', cows)
 
 
 
