@@ -65,6 +65,21 @@ while True:
     number = input_number()
     bulls, cows = check(number, enemy)
     print('быки: ', bulls, 'коровы:', cows)
+    if bulls == 4:
+        print('Победил Игрок')
+        print('Компъютер загадал число: ', enemy)
+        break
 
+    print('-' * 15, 'ход компъютера', '-' * 15)
+    enemy_try = get_all_answers(answers)
+    print('Компътер считает, что вы загадали число ', enemy_try)
+    bulls, cows = check(enemy_try, enemy)
+    print('быки: ', bulls, 'коровы:', cows)
+    if bulls == 4:
+        print('Победил Игрок')
+        print('Компъютер загадал число: ', enemy)
+        break
+    else:
+        answers = del_bad_answers(answers, enemy_try, bulls, cows)
 
 
